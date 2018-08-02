@@ -1,0 +1,94 @@
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+syntax on
+
+set number relativenumber
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+map ^N ^[:n^M
+map ^O ^[:ed #^M
+map ^E ^[:e!^M
+map ^A ^[/12345abcd^M
+map <F5>  i{<Esc>ea}<Esc>
+map <F11> i/**<CR> *<CR>*<CR>* @param <CR>* @return<CR>*/<Esc>
+
+set hlsearch
+
+"map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <C-\> :vsplit <CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>
+
+"map Ctrl+n to open NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+:set autoindent
+:set tabstop=4
+:set softtabstop=4
+:set shiftwidth=4
+:set expandtab
+":set noexpandtab
+:set background=dark
+:set bs=2
+
+" vimdiff
+if &diff
+    set diffopt+=iwhite
+endif
+
+" viminfo
+" '0 means that marks will not be saved
+" :0 means that command-line history will not be saved
+" <0 means that registsers will not be saved
+" @0 means that input-line history will not be saved
+" f0 means that marks will not be saved
+" no % means that the buffer list will not be saved
+" no / means that the search history will be saved
+"
+":set viminfo='0,:0,<0,@0,f0
+set viminfo=%,'50,\"100,:100,n~/.viminfo
+
+" spelling
+au BufRead *.txt.wiki setlocal spell spelllang=en_us
+au BufNewFile,BufReadPost *messages :set filetype=messages
+
+" doxygen
+let g:load_doxygen_syntax=1
+au BufNewFile,BufRead *.doxygen setfiletype doxygen
+
+" pathogen
+"execute pathogen#infect('~/.vim/bundle/{}')
+
+
+"
+" Multiple search
+"let g:MultipleSearchMaxColors=8
+"let g:MultipleSearchTextColorSequence="red,yellow,blue,green,magenta,cyan,gray,brown"
+
+:highlight Folded ctermfg=darkgreen
+:highlight myKeyWord ctermfg=yellow
+highlight xmlTag ctermfg=yellow
+highlight xmlTagName ctermfg=yellow
+highlight xmlEndTag ctermfg=yellow
+" xmlTag xmlTagName xmlEndTag
+
+"
+" Over Length
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%91v.*/
+set pastetoggle=<F2>
