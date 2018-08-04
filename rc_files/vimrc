@@ -92,3 +92,4 @@ highlight xmlEndTag ctermfg=yellow
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%91v.*/
 set pastetoggle=<F2>
+set mouse=r
