@@ -16,12 +16,6 @@ syntax on
 
 set number relativenumber
 
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
 map ^N ^[:n^M
 map ^O ^[:ed #^M
 map ^E ^[:e!^M
@@ -92,3 +86,7 @@ highlight xmlEndTag ctermfg=yellow
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%91v.*/
 set pastetoggle=<F2>
+autocmd WinEnter,BufEnter,FocusGained,InsertLeave * :set relativenumber
+autocmd WinLeave,BufLeave,FocusLost,InsertEnter   * :set norelativenumber
+set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
+set laststatus=2
