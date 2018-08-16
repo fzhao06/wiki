@@ -1,0 +1,14 @@
+[diff]
+        tool = vimdiff
+[difftool]
+        prompt = false
+[color]
+        ui = true
+
+[user]
+	name = felix
+	email = felix's email
+
+[push]
+    default = simple
+
