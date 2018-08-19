@@ -1,23 +1,4 @@
-# .bashrc
-
-# User specific aliases and functions
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-if test -f $HOME/.gpg-agent-info && \
-kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
-GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
-else
-# No, gpg-agent not available; start gpg-agent
-eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
-fi
-export GPG_TTY=$(tty)
-export GPG_AGENT_INFO
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
-export PATH=$PATH:$HADOOP_HOME/bin
+source /usr/share/defaults/etc/profile
+export PS1="\[\e[1;35m\]{\[\e[1;36m\]\u@\h\[\e[1;35m\] \w\[\e[1;36m\]}\$ \[\e[0;33m\]" 
+export LS_COLORS='di=0;36'
+export KONSOLE_PROFILE_NAME=fzhao
