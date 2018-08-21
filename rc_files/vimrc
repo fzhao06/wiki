@@ -1,5 +1,19 @@
-filetype plugin indent on    " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'wincent/terminus'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'ajh17/VimCompletesMe'
+call plug#end()
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -11,6 +25,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"let g:ale_lint_on_enter = 'never'
+let g:ale_sign_column_always = 1
 
 syntax on
 
@@ -86,8 +102,8 @@ highlight xmlEndTag ctermfg=yellow
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%91v.*/
 set pastetoggle=<F2>
-autocmd WinEnter,BufEnter,FocusGained,InsertLeave * :set relativenumber
-autocmd WinLeave,BufLeave,FocusLost,InsertEnter   * :set norelativenumber
+"autocmd WinEnter,BufEnter,FocusGained,InsertLeave * :set relativenumber
+"autocmd WinLeave,BufLeave,FocusLost,InsertEnter   * :set norelativenumber
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 set laststatus=2
 set mouse=r
