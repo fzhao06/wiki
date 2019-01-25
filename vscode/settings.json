@@ -1,0 +1,91 @@
+{
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#666666",
+        "panel.background": "#304453",
+        "sideBar.background": "#2a314b",
+        "foreground": "#a1a8b9",
+        "terminal.ansiBlack": "#69656e",
+        "terminal.ansiBrightBlack": "#9e8ca5",
+        "terminal.ansiRed": "#c6586f",
+        "terminal.ansiBrightRed": "#c17286",
+        "terminal.ansiCyan": "#73bcc9",
+        "terminal.ansiBrightCyan": "#86d3dd",
+        "terminal.ansiGreen": "#7cc780",
+        "terminal.ansiBrightGreen": "#aee49d",
+        "terminal.ansiMagenta": "#a7648c",
+        "terminal.ansiBrightMagenta": "#ec78b0",
+        "terminal.ansiYellow": "#e29cbe",
+        "terminal.ansiBrightYellow": "#fde3b4",
+        "terminal.ansiBlue": "#6796bd",
+        "terminal.ansiBrightBlue": "#a1baf0",
+        "terminal.ansiWhite": "#c0b9b3",
+        "terminal.ansiBrightWhite": "#e0dddb",
+        "terminal.background": "#1d2c49",
+        "editorCursor.background": "#f7cac2",
+        "editor.background": "#1c263b",
+        "editorGutter.addedBackground": "#73a6cf"
+    },
+    "editor.tokenColorCustomizations": {
+        "[Rouge]": {
+            "comments": "#63b4c9",
+            "keywords": "#d4bee7",
+            "variables": "#f8ce94",
+            "types": "#f8ecd1",
+            "numbers": "#b9da94",
+            "strings": "#70a2b6",
+            "textMateRules": [
+                {
+                    "scope": "meta",
+                    "settings": {
+                        "foreground": "#e29cbe",
+                    }
+                },
+                {
+                    "scope": "keyword",
+                    "settings": {
+                        "foreground": "#f8a1f4",
+                    }
+                },
+                {
+                    "scope": "punctuation",
+                    "settings": {
+                        "foreground": "#add8e2",
+                    }
+                },
+                {
+                    "scope": "support.type.property-name.json",                   
+                    "settings": {
+                        "foreground": "#e29cbe",
+                    }
+                },
+                {
+                    "scope": "text.xml",                   
+                    "settings": {
+                        "foreground": "#f8ecd1",
+                    }
+                },
+                {
+                    "scope": "meta.paragraph.markdown",                   
+                    "settings": {
+                        "foreground": "#e29cbe",
+                    }
+                },
+                {
+                    "scope": "source.python",                   
+                    "settings": {
+                        "foreground": "#f7cac2",
+                    }
+                },
+                {
+                    "scope": "keyword.operator",                   
+                    "settings": {
+                        "foreground": "#a1bcc7",
+                    }
+                }
+            ]
+       }
+    },
+    "workbench.colorTheme": "Rouge",
+    "editor.lineNumbers": "relative",
+    "amVim.smartRelativeLineNumbers": true,
+}
