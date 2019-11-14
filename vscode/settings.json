@@ -28,7 +28,7 @@
     "editor.tokenColorCustomizations": {
         "[Rouge]": {
             "comments": "#63b4c9",
-            "keywords": "#d4bee7",
+            "keywords": "#c8b4da",
             "variables": "#f8ce94",
             "types": "#f8ecd1",
             "numbers": "#b9da94",
@@ -73,7 +73,19 @@
                 {
                     "scope": "source.python",                   
                     "settings": {
-                        "foreground": "#f7cac2",
+                        "foreground": "#ffbed1"
+                    }
+                },
+                {
+                    "scope": "source.go",                   
+                    "settings": {
+                        "foreground": "#e29cbe"
+                    }
+                },
+                {
+                    "scope": "entity.name.import.go",                   
+                    "settings": {
+                        "foreground": "#70a2b6"
                     }
                 },
                 {
@@ -81,7 +93,13 @@
                     "settings": {
                         "foreground": "#a1bcc7",
                     }
-                }
+                },
+                {
+                    "scope": "source.cpp",                   
+                    "settings": {
+                        "foreground": "#e97a9b",
+                    }
+                },
             ]
        }
     },
